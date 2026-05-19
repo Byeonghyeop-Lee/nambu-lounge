@@ -41,10 +41,10 @@ LOGO_BLUE_B64  = _b64(os.path.join(BASE_DIR, "assets", "logo_blue.png"))
 def get_stats():
     conn = get_connection()
     cur  = conn.cursor()
-    cur.execute('SELECT COUNT(*) FROM posts')
-    posts = cur.fetchone()[0]
-    cur.execute('SELECT COUNT(*) FROM comments')
-    comments = cur.fetchone()[0]
+    cur.execute('SELECT COUNT(*) AS cnt FROM posts')
+    posts = cur.fetchone()['cnt']
+    cur.execute('SELECT COUNT(*) AS cnt FROM comments')
+    comments = cur.fetchone()['cnt']
     conn.close()
     return posts, comments
 
