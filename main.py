@@ -519,6 +519,9 @@ section[data-testid="stSidebar"] label {{
 }}
 hr.sect {{ border: none; border-top: 1px solid #EEF0F6; margin: 1.2rem 0; }}
 .stSuccess, .stWarning, .stError, .stInfo {{ border-radius: 10px !important; }}
+
+/* 재실행 중 블러/페이드 효과 제거 */
+[data-stale="true"] {{ opacity: 1 !important; transition: none !important; }}
 </style>
 """, unsafe_allow_html=True)
 
